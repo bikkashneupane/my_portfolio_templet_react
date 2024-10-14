@@ -4,7 +4,8 @@ Welcome to the Portfolio Website Template, a customizable portfolio built using 
 
 ## Demo
 
-You can view a live demo of this template at [bikashneupane.com](https://www.bikashneupane.com).
+You can view a live demo of this template at [portfolio live demo](https://reactportfolio-chi-three.vercel.app/).
+My Actual Porfolio [bikashneupane.com](https://bikashneupane.com)
 
 ## Features
 
