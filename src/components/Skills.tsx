@@ -18,6 +18,7 @@ import {
 } from "react-icons/si";
 import { motion } from "framer-motion";
 import { RiNextjsFill } from "react-icons/ri";
+import React from "react";
 
 const techSkills = [
   "HTML5",
@@ -41,7 +42,12 @@ const techSkills = [
   "GitHub",
 ];
 
-const skills = [
+interface Skill {
+  icon: React.ReactNode;
+  name: string;
+}
+
+const skills: Skill[] = [
   {
     icon: <FaHtml5 className="text-orange-500 w-6 h-6" />,
     name: "HTML5",
@@ -105,7 +111,7 @@ const skills = [
 ];
 
 const Skills = () => {
-  const duplicatedSkills = [...skills, ...skills, ...skills];
+  const duplicatedSkills: Skill[] = [...skills, ...skills, ...skills];
 
   return (
     <section className="px-3 lg:px-0 mt-16 " id="skills">

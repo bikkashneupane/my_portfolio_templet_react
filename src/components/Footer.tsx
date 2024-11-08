@@ -1,5 +1,7 @@
+import React from "react";
+
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear: number = new Date().getFullYear();
 
   return (
     <footer className="relative px-3 flex items-center justify-center h-[120px] border-t dark:border-t-gray-700">

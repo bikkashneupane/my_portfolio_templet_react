@@ -1,7 +1,13 @@
+import React from "react";
 import { FaMoon } from "react-icons/fa";
 import { LuSunMedium } from "react-icons/lu";
 
-const DarkMode = ({ isDark, toggleDarkMode }) => {
+interface Props {
+  isDark: boolean;
+  toggleDarkMode: () => void;
+}
+
+const DarkMode = ({ isDark, toggleDarkMode }: Props) => {
   return (
     <div className="fixed bottom-5 right-5 z-50">
       <button

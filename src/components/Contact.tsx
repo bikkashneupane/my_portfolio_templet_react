@@ -1,22 +1,32 @@
+import React from "react";
+import { IconType } from "react-icons";
 import { FaEnvelope, FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 
-const contact = [
+interface ContactInfo {
+  icon: IconType;
+  link?: string;
+  mail?: boolean;
+  phone?: string;
+  name?: string;
+}
+
+const contact: ContactInfo[] = [
   {
-    icon: <FaEnvelope className="text-2xl" />,
+    icon: FaEnvelope,
     link: "thisisbikkash@gmail.com",
     mail: true,
   },
   {
-    icon: <FaPhoneAlt className="text-2xl" />,
+    icon: FaGithub,
     phone: "0451803981",
   },
   {
-    icon: <FaGithub className="text-2xl" />,
+    icon: FaGithub,
     link: "https://github.com/bikkashneupane",
     name: "/bikkashneupane",
   },
   {
-    icon: <FaLinkedin className="text-2xl" />,
+    icon: FaLinkedin,
     link: "https://www.linkedin.com/in/bikkashneupane/",
     name: "/bikkashneupane",
   },
@@ -34,28 +44,20 @@ const Contact = () => {
             Lets get in touch! Feel free to reach out via email or phone.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 pb-8 px-5 rounded-lg self-center">
-            {contact.map(({ icon, link, phone, mail, name }, index) =>
-              !phone ? (
+            {contact.map(({ icon, link, phone, mail, name }, index) => {
+              const Icon = icon; //icon is itself an component
+              return (
                 <a
                   key={index}
-                  href={mail ? `mailto:${link}` : link}
+                  href={phone ? `tel:${phone}` : mail ? `mailto:${link}` : link}
                   target="_blank"
                   className="dark:text-gray-400 flex lg:flex-col items-center gap-4 md:gap-2 border border-gray-300 dark:border-gray-700 py-3 px-4 rounded-md hover:bg-teal-600 transition-transform delay-75 hover:text-white dark:hover:text-white ease-in-out"
                 >
-                  {icon}
-                  <span>{name ?? link}</span>
+                  <Icon className="text-2xl" />
+                  <span>{phone ? phone : name ?? link}</span>
                 </a>
-              ) : (
-                <a
-                  key={index}
-                  href={`tel:${phone}`}
-                  className="dark:text-gray-400 flex lg:flex-col items-center gap-4 md:gap-2 border border-gray-300 dark:border-gray-700 py-3 px-4 rounded-md hover:bg-teal-600 transition-transform delay-75 hover:text-white dark:hover:text-white ease-in-out"
-                >
-                  {icon}
-                  <span>{phone}</span>
-                </a>
-              )
-            )}
+              );
+            })}
           </div>
         </div>
       </div>

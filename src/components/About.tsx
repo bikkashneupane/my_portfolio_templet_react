@@ -1,3 +1,4 @@
+import React from "react";
 import portfolio from "../assets/bikash.png";
 
 const About = () => {

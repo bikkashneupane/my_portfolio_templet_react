@@ -1,3 +1,4 @@
+import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
 const TextAnimation = () => {
@@ -10,6 +11,8 @@ const TextAnimation = () => {
         "Designer",
         2000,
         "Developer",
+        2000,
+        "Debugger",
         2000,
       ]}
       wrapper="span"

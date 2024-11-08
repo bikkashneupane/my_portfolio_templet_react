@@ -1,6 +1,15 @@
 import project from "../../assets/project.webp";
 
-export const myProjects = [
+interface Project {
+  name: string;
+  thumbnail: string;
+  description: string;
+  tech: string[];
+  link: string;
+  github: string;
+}
+
+export const myProjects: Project[] = [
   {
     name: "Project Name",
     thumbnail: project,

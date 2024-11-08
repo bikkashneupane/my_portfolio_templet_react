@@ -1,9 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { FaHome, FaUser, FaEnvelope, FaProjectDiagram } from "react-icons/fa";
 import { GiGiftOfKnowledge } from "react-icons/gi";
 import { motion } from "framer-motion";
 
-const navItems = [
+interface NavItem {
+  icon: React.ReactNode;
+  name: string;
+  to: string;
+}
+
+const navItems: NavItem[] = [
   { icon: <FaHome />, name: "Home", to: "#hero" },
   { icon: <FaUser />, name: "About", to: "#about" },
   { icon: <FaProjectDiagram />, name: "Projects", to: "#projects" },
@@ -14,7 +20,7 @@ const navItems = [
 const Navigation = () => {
   const [mobileView, setMobileView] = useState(false);
 
-  const handleClick = (e, to) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
     e.preventDefault();
     const targetElement = document.querySelector(to);
     if (targetElement) {

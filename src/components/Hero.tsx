@@ -1,8 +1,9 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TextAnimation from "./TextAnimation";
 import { motion } from "framer-motion";
+import React from "react";
 
-const heroImg = "https://wallpapercave.com/wp/wp7890200.jpg";
+const heroImg: string = "https://wallpapercave.com/wp/wp7890200.jpg";
 
 const Hero = () => {
   return (

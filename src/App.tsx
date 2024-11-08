@@ -7,11 +7,11 @@ import Footer from "./components/Footer";
 import "./App.css";
 import ParticlesBg from "./components/ParticlesBg";
 import DarkMode from "./components/DarkMode";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Projects from "./components/projects/Projects";
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -23,10 +23,11 @@ function App() {
   const toggleDarkMode = () => {
     setIsDark(!isDark);
   };
+
   return (
     <>
       <Navigation />
-      {!isDark && <ParticlesBg />}
+      <ParticlesBg />
       <Hero />
       <About />
       <Skills />

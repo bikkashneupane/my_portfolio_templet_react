@@ -1,5 +1,6 @@
-import { FaGithub, FaLink, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLink } from "react-icons/fa";
 import { myProjects } from "./myProjetcs";
+import React from "react";
 
 const Projects = () => {
   return (
@@ -14,10 +15,7 @@ const Projects = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-16 md:gap-y-8">
           {myProjects.map(
-            (
-              { name, thumbnail, description, tech, link, github, linkedin },
-              index
-            ) => {
+            ({ name, thumbnail, description, tech, link, github }, index) => {
               return (
                 <div
                   key={index}
@@ -48,11 +46,6 @@ const Projects = () => {
                     </div>
 
                     <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-5 pb-3 text-gray-500 ">
-                      {linkedin && (
-                        <a href={linkedin} target="_blank">
-                          <FaLinkedin className="w-6 h-6 hover:text-black hover:dark:text-white" />
-                        </a>
-                      )}
                       <a href={link} target="_blank">
                         <FaLink className="w-6 h-6 hover:text-black hover:dark:text-white" />
                       </a>
